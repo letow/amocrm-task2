@@ -31,6 +31,7 @@ body {
 body {
     background-image: url("/img/Desktop.jpg");
     background-size: cover;
+    background-position: top;
     background-repeat: no-repeat;
 }
 
@@ -44,11 +45,19 @@ footer {
 
 nav {
     margin-top: 50px;
+    gap: 30px;
+}
+
+.nav__contacts {
+    display: flex;
+    column-gap: 40px;
+    flex-wrap: wrap;
 }
 
 .wrapper {
     max-width: 1140px;
     margin: 0 auto;
+    padding: 20px;
 }
 
 .logo {
@@ -62,6 +71,8 @@ nav {
 
 .tel {
     font-weight: 500;
+    margin-bottom: 10px;
+    white-space: nowrap;
 }
 
 .links {
@@ -186,22 +197,35 @@ nav {
     .wrapper {
         margin: auto;
     }
+
+    main,
+    footer {
+        flex-direction: column;
+    }
+
+    main {
+        padding: 16px !important;
+    }
 }
 
 @media (width < 800px) {
     .logo-box,
-    nav > .tel,
-    nav > .messengers {
+    nav > .nav__contacts {
         display: none;
     }
 
     nav {
         margin: 0;
+        background-color: #000;
     }
 
     main {
-        background-image: url("img/bg.jpg");
-        background-size: contain;
+        background-image: url("img/bg.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        padding: 150px 30px;
+        align-items: center;
     }
 
     .links {
@@ -218,21 +242,15 @@ nav {
     }
 
     .wrapper {
-        padding: 10px 0;
+        padding: 0;
     }
 
     footer {
         margin: 0 16px;
     }
 
-    main,
     nav {
-        padding: 0 16px;
-    }
-
-    main,
-    footer {
-        flex-direction: column;
+        padding: 5px 16px;
     }
 
     .contact {
